@@ -1,18 +1,16 @@
 // -------------------------- 全局配置（所有文件可共用） --------------------------
 const EXPERIMENT_CONFIG = {
     imageFolder: "artpic/", // 图片文件夹相对路径（根目录下的artpic）
-    totalTrials: 50,       // 总试次数
+    totalTrials: 50,       // 总试次数（50张图）
     fixationDuration: 1000, // 注视点时长（ms）
-    blankDuration: 500,     // 空屏时长（ms）
-    bgColor: "#626262",     // 背景色
-    textColor: "#000000"    // 文本色
+    blankDuration: 500      // 空屏时长（ms）
 };
 
 // -------------------------- 生成图片列表 --------------------------
 let IMAGE_LIST = [];
 for (let i = 1; i <= EXPERIMENT_CONFIG.totalTrials; i++) {
     IMAGE_LIST.push({
-        imageId: i,                          // 图片序号（对应1.png~100.png）
+        imageId: i,                          // 图片序号
         imageUrl: EXPERIMENT_CONFIG.imageFolder + i + ".png", // 图片完整相对路径
         imageViewTime: 0,                    // 图片观看时长（后续记录）
         beautyScore: 0,                      // 美观度评分（后续记录）
@@ -30,11 +28,3 @@ const GLOBAL_DATA = {
         "图片序号\t美观度(0-1)\t观看时长(ms)"
     ]
 };
-
-// 添加数据下载相关的工具函数声明
-if (typeof downloadData === 'undefined') {
-    // 这些函数将在 03_timeline.js 中定义
-    var downloadData = null;
-    var saveBackupData = null;
-    var checkBackupData = null;
-}
