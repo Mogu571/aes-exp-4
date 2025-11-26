@@ -10,7 +10,7 @@ const EXPERIMENT_CONFIG = {
 let IMAGE_LIST = [];
 for (let i = 1; i <= EXPERIMENT_CONFIG.totalTrials; i++) {
     IMAGE_LIST.push({
-        imageId: i,                          // 图片序号
+        imageId: i,                          // 图片序号（对应1.png~100.png）
         imageUrl: EXPERIMENT_CONFIG.imageFolder + i + ".png", // 图片完整相对路径
         imageViewTime: 0,                    // 图片观看时长（后续记录）
         beautyScore: 0,                      // 美观度评分（后续记录）
